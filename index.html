@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>환율 AI 비서</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>원/달러 환율 AI 비서</h1>
+    <p id="wake-notice" class="notice">서버를 깨우는 중일 수 있어요. 첫 요청은 최대 1분 정도 걸릴 수 있어요.</p>
+  </header>
+
+  <main>
+    <section id="summary-section">
+      <h2>데이터 요약</h2>
+      <div id="summary">불러오는 중...</div>
+    </section>
+
+    <section id="chat-section">
+      <h2>AI 채팅</h2>
+      <div id="chat-box"></div>
+      <div id="loading" hidden>답변을 생성하는 중...</div>
+      <form id="chat-form">
+        <input id="chat-input" type="text" placeholder="환율에 대해 물어보세요" required />
+        <button type="submit">보내기</button>
+      </form>
+    </section>
+
+    <section id="data-section">
+      <h2>데이터 관리</h2>
+      <form id="data-form">
+        <input id="data-date" type="date" required />
+        <input id="data-value" type="number" step="0.01" placeholder="환율" required />
+        <input id="data-memo" type="text" placeholder="메모(선택)" />
+        <button type="submit">추가</button>
+      </form>
+      <ul id="data-list"></ul>
+    </section>
+
+    <section id="history-section">
+      <h2>대화 기록</h2>
+      <ul id="conversation-list"></ul>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
